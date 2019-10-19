@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'taucharts';
+import { PlotConsumerService } from 'src/app/core/services/kafka/plot-consumer.service';
 
 
 @Component({
@@ -24,7 +25,9 @@ export class PlotComponent implements OnInit {
 
   private chart;
 
-  constructor() { }
+  constructor(
+    private plotConsumer: PlotConsumerService
+  ) { }
 
   ngOnInit() {
     this.chart = new Chart({
