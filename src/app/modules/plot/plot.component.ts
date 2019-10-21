@@ -19,7 +19,6 @@ export class PlotComponent implements OnInit {
 
   ngOnInit() {
     this.chart = new HashTagChartModel();
-    this.chart.draw('#plot');
     this.plotConsumer.subscribe(this.chart);
   }
 }
