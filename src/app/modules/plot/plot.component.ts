@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'taucharts';
 import { PlotConsumerService } from '@service/kafka/plot-consumer.service';
 import { HashTagChartModel } from '@model/hash-tag-chart.model';
 
