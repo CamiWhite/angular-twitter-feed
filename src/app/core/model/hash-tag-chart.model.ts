@@ -41,18 +41,7 @@ export class HashTagChartModel implements Observer<Array<HashTagInfo>> {
       series: [{
         type: 'bar',
         name: '# Hashtag',
-        data: [
-          ['#ジャパンコーラ', 52],
-          ['#ペプシ', 52],
-          ['#本田とコイントス', 51],
-          ['#毎日挑戦', 51],
-          ['#11時start', 50],
-          ['#PCAs', 32],
-          ['#質問箱', 32],
-          ['#私はKのコインを選ぶ', 28],
-          ['#갓세븐', 22],
-          ['#私はHのコインを選ぶ', 22],
-        ]
+        data: this.dataSource.map(val => [val.hashTag, val.times]),
       }]
     })
   }
@@ -66,9 +55,6 @@ export class HashTagChartModel implements Observer<Array<HashTagInfo>> {
   error(err: any) {
     console.log('[ERROR] Could not drawn', err);
   };
-
-  draw(selector: String) {
-  }
 
   complete: () => void;
 }
